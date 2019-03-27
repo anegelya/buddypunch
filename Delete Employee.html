@@ -806,8 +806,20 @@ fbq('track', 'PageView');
                     
                 </div>
                 <br>
+
+                <label for="delete-confirmation">
+                    Enter the text <strong>delete</strong> here to delete this employee:    
+                </label>
+                
+                <input type="text" name="delete-confirmation" id="delete-confirmation" class="form-control m-input" autocomplete="off" required="" pattern="^delete$">
+                <div class="invalid-feedback">
+                    Enter the text <strong>delete</strong> here to delete this employee
+                </div>
+
+
+                <br><br>
                 <div class="form-actions">
-                    <input type="submit" value="Delete" class="btn btn-danger">
+                    <input type="submit" value="Delete" class="btn btn-danger" id="submit-delete">
                     <a class="btn btn-default" href="https://buddypunchapp-qa.azurewebsites.net/Employee/View/14218">Cancel</a>
                 </div>
             </div>
