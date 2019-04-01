@@ -785,11 +785,13 @@ fbq('track', 'PageView');
         <div class="col-md-12">      
             <!-- BEGIN PAGE TITLE & BREADCRUMB-->
             
-            <div class="m-alert m-alert--outline alert alert-info">
-								<h4 class="block">Employee Login</h4>
-								<p>
-								    The username and password will be sent to the employee's email address.
-								</p>
+            <div class="d-flex m-portlet align-items-center">
+                                <div class="bg-info py-4 px-4 text-white">
+                                    <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class="col-11">
+                                    <strong>The username and password will be sent to the employee's email address.</strong>
+                                </div>
 							</div>
             <!-- END PAGE TITLE & BREADCRUMB-->  
         </div>
@@ -1081,8 +1083,10 @@ fbq('track', 'PageView');
                 </div>
 
 
-                <div class="form-actions">
-                    <input type="submit" value="Save" class="btn btn-primary btn-create-employee" title="">
+                <div class="form-actions fixed-bottom px-5 py-3 bg-light border-top border-dark">
+                    <input type="hidden" value="true" name="AddAnother" id="addAnother">
+                    <input type="submit" value="Save & Add Another" class="btn btn-primary btn-create-employee" title="">
+                    <input type="button" value="Save" id="createEmployee" class="btn btn-primary btn-create-employee" title="">    
                     <a class="btn btn-default" href="https://buddypunchapp-qa.azurewebsites.net/Employee">Cancel</a>
                 </div>
             </div>
