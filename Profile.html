@@ -22,24 +22,16 @@
     <!-- BEGIN PAGE LEVEL STYLES -->
     
     <style>
-        body {
-            position: relative;
-        }
 
         .profile-picture {
-            position: absolute;
-            right: 36px;
             text-align: center;
-            top: 100px;
-            max-width: 240px;
-            max-height: 240px;
-            width: 25%;
         }
 
         .profile-picture img {
             border-radius: 50% !important;
             display: block;
             margin-bottom: 10px;
+            margin-top: 1em;
         }
     </style>
 
@@ -795,7 +787,7 @@ fbq('track', 'PageView');
                 
 
 <!-- BEGIN PAGE HEADER-->
-<div class="m-subheader m--margin-bottom-10">
+<div class="m-subheader m--margin-bottom-10" id="top">
     <ul class="m-subheader__breadcrumbs m-nav m-nav--inline"><li class="m-nav__item m-nav__item--home"><a href="https://buddypunchapp-qa.azurewebsites.net/" class="m-nav__link m-nav__link--icon breadcrumb-home-icon"><i class="m-nav__link-icon la la-home"></i></a></li><li class="m-nav__separator">-</li><li class="m-nav__item"><a href="https://buddypunchapp-qa.azurewebsites.net/Employee/" class="m-nav__link"><span class="m-nav__link-text">View All Employees</span></a></li><li class="m-nav__separator">-</li><li class="m-nav__item"><a href="#" class="m-nav__link"><span class="m-nav__link-text">Employee Profile</span></a></li></ul>
 </div>
 <!-- END PAGE HEADER-->
@@ -810,7 +802,7 @@ fbq('track', 'PageView');
     <div id="profile-sidebar" class="sticky d-none d-md-block" style="position: fixed; top: 120px; width: 242.367px;">
         <div class="text-right">
             <nav class="nav nav-pills">
-                <a href="#profile" class="nav-link w-100 active">Profile</a>
+                <a href="#top" class="nav-link w-100 active">Profile</a>
 
                 <a href="#locations" class="nav-link w-100 ">Locations</a>
                 <a href="#department-codes" class="nav-link w-100 ">Department Codes</a>
@@ -869,7 +861,7 @@ fbq('track', 'PageView');
     
         
     </div>
-</div><div class="m-portlet__body ">            <form action="#" class="m-form m-form--fit m-form--label-align-right">
+</div><div class="m-portlet__body row">            <form action="#" class="m-form m-form--fit m-form--label-align-right col-9">
             <div class="form-body">
             <div class="form-group m-form__group row">
                 <label class="col-lg-3 control-label">Username</label>
@@ -1101,14 +1093,15 @@ fbq('track', 'PageView');
                 </div>
             </div>
 
-            <div class="profile-picture">
+            
+            </div>
+            </form>
+            <div class="profile-picture col-3">
                 <img src="Dashboard_files/facial_recognition_login.png" class="img-fluid ml-auto mr-auto">
                 <a href="https://buddypunchapp-qa.azurewebsites.net/Face/ProfilePicture/14218">Set Profile Picture</a>
                     <br>
                     <a href="https://buddypunchapp-qa.azurewebsites.net/Face/Faces/14218">Manage All Faces</a>
             </div>
-            </div>
-            </form>
 </div></div>    </div>
 
 
@@ -1693,13 +1686,20 @@ fbq('track', 'PageView');
 
             if (this.hash !== "") {
                 var hash = this.hash;
+                var elem = $(this);
+                var currScroll = $('html, body').scrollTop();
+                var scrollTo = $(hash).offset().top - 150;
                 $('html, body').animate({
-                    scrollTop: $(hash).offset().top - 150
+                    scrollTop: scrollTo
                 }, 600, function(){
                     if(history.pushState) {
                         history.pushState(null, null, hash);
                     }
                 });
+                setTimeout(function() {
+                    $("#profile-sidebar a").removeClass('active');
+                    elem.addClass('active');
+                }, 800);
             }
 
         }); 
