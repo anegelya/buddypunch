@@ -36,11 +36,11 @@
             width: 25%;
         }
 
-            .profile-picture img {
-                border-radius: 50% !important;
-                display: block;
-                margin-bottom: 10px;
-            }
+        .profile-picture img {
+            border-radius: 50% !important;
+            display: block;
+            margin-bottom: 10px;
+        }
     </style>
 
     <!-- END PAGE LEVEL STYLES -->
@@ -55,7 +55,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-152x152.png">
 
-    <title>Employee Profile - Will Byers</title>
+    <title>Will Byers - Employee Profile</title>
 
     <!--
      menuProxy - The URL of  the code on your site that fetches and displays the HTML for the Intuit
@@ -156,7 +156,7 @@ fbq('track', 'PageView');
 @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><link rel="stylesheet" href="Dashboard_files/intuit.css" type="text/css" media="all"><!--[if IE 7]><style type='text/css'>.intuitPlatformConnectButton, .intuitPlatformReconnectButton, .intuitPlatformLoginButtonVertical, .intuitPlatformLoginButtonHorizontal, .intuitPlatformLoginButtonLogo { font-size:0; text-indent: 0; line-height: 0; overflow: hidden; }</style><![endif]--><style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="m-page--fluid m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default m-header--minimize-off">
+<body class="m-page--fluid m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default m-header--minimize-off" style="">
     <!-- BEGIN HEADER -->
     <div class="m-grid m-grid--hor m-grid--root m-page">
         <!-- BEGIN TOP NAVIGATION BAR -->
@@ -220,9 +220,9 @@ fbq('track', 'PageView');
                                     <div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
                                     <div class="m-dropdown__inner">
                                         <div class="m-dropdown__body">
-                                            <div class="m-dropdown__scrollable m-scrollable mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" data-scrollable="true" data-max-height="300" data-mobile-max-height="200" style="max-height: 300px; height: 300px; position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: 300px;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                            <div class="m-dropdown__scrollable m-scrollable" data-scrollable="true" data-max-height="300" data-mobile-max-height="200" style="max-height: 200px; overflow: auto;">
                                                 <div class="m-dropdown__content m-list-search m-list-search--skin-light"></div>
-                                            </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -772,13 +772,14 @@ fbq('track', 'PageView');
                     </div>
             </div>
     </li>
-                                                        <li class="m-menu__item m-menu__item--rel" aria-haspopup="true">
+                                                                                    <li class="m-menu__item  m-menu__item--rel" aria-haspopup="true">
                                 <a href="javascript:;" class="m-menu__link m-menu__toggle" data-toggle="modal" data-target="#messageModal">
+                                    <span class="m-menu__item-here"></span>
                                     <span class="m-menu__link-text d-lg-none d-xl-none">Send Message</span>
                                     <i class="m-menu__hor-arrow fa fa-envelope" style="font-size: 1.5em;"></i>
                                 </a>
                             </li>
-                            
+                        
                         </ul>
                     </div>
                 </div>
@@ -806,1183 +807,670 @@ fbq('track', 'PageView');
 <div class="row">
 <div class="col-md-2">
     <!-- Sidebar -->
-    <div id="profile-sidebar" class="sticky d-none d-md-block">
+    <div id="profile-sidebar" class="sticky d-none d-md-block" style="position: fixed; top: 120px; width: 242.367px;">
         <div class="text-right">
             <nav class="nav nav-pills">
-                <a href="#profile" class="nav-link w-100">Profile</a>
-                <a href="#employees-assigned" class="nav-link w-100">Employees assigned</a>
-                <a href="#locations" class="nav-link w-100">Locations</a>
-                <a href="#department-codes" class="nav-link w-100">Department Codes</a>
-                <a href="#positions" class="nav-link w-100">Positions</a>
-                <a href="#pto" class="nav-link w-100">PTO</a>
-                <a href="#automatic-breaks" class="nav-link w-100">Automatic Breaks</a>
-                <a href="#device-locks" class="nav-link w-100">Device Locks</a>
-                <a href="#facial-recognition" class="nav-link w-100">Facial Recognition</a>
-                <a href="#geofences" class="nav-link w-100">Geofences</a>
-                <a href="#gps-settings" class="nav-link w-100">GPS Settings</a>
-                <a href="#ip-address-locks" class="nav-link w-100">IP Address Locks</a>
-                <a href="#overtime-alerts" class="nav-link w-100">Overtime Alerts</a>
-                <a href="#punch-limits" class="nav-link w-100">Punch Limits</a>
-                <a href="#time-card-approval" class="nav-link w-100">Time Card Approval Settings</a>
-                <a href="#time-entry" class="nav-link w-100">Time Entry Options</a>
-                <a href="#webcam" class="nav-link w-100">Webcam Settings</a>
+                <a href="#profile" class="nav-link w-100 active">Profile</a>
+
+                <a href="#locations" class="nav-link w-100 ">Locations</a>
+                <a href="#department-codes" class="nav-link w-100 ">Department Codes</a>
+                    <a href="#positions" class="nav-link w-100 ">Positions</a>
+
+                <a href="#pto" class="nav-link w-100 ">PTO</a>
+                <a href="#pto-accrual-rules" class="nav-link w-100 ">PTO Accrual Rules</a>
+                <a href="#device-locks" class="nav-link w-100 no-data">Device Locks</a>
+                <a href="#geofences" class="nav-link w-100 no-data">Geofences</a>
+                <a href="#ip-address-locks" class="nav-link w-100 no-data">IP Address Locks</a>
+                <a href="#overtime-alerts" class="nav-link w-100 ">Overtime Alerts</a>
             </nav>
         </div>
     </div>
     <!-- /#sidebar-wrapper -->
 </div>
 <div class="col-md-10 ">
-
-    <div id="profile" class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel  bold uppercase">Employee Profile</span>
-                    </h3>
-                </div>
+        <div class="m-alert m-alert--icon m-alert--icon-solid m-alert--outline alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="m-alert__icon">
+                <i class="flaticon-exclamation-1"></i>
+                <span></span>
             </div>
-            <div class="m-portlet__head-tools">
-
+            <div class="m-alert__text">
+                <strong>Some of your department codes are not assigned to locations.</strong> <br>They'll need to be assigned to locations for your employees to see them.
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Location">Link them here</a>
+            </div>
+            <div class="m-alert__close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    <div id="profile">
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">    <div class="m-portlet__head-caption">
+        <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">
+                <span class="caption-subject font-blue-steel  bold uppercase">Employee Profile</span>
+            </h3>
+        </div>
+    </div>
+    <div class="m-portlet__head-tools">
+       
                 <a class="m-btn btn btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/DeleteEmployee/14218">
                     <i class="fa fa-trash"></i>
                     Delete
                 </a>
-
-                <a class="m-btn btn btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/ViewQrCode/14218">
-                    <i class="fa fa-qrcode"></i>
-                    View QR Code
-                </a>
-
+                     <a class="m-btn btn btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/ViewQrCode/14218">
+                         <i class="fa fa-qrcode"></i>
+                         View QR Code
+                     </a>
                 <a class="m-btn btn btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/ResendWelcomeEmail/14218">
                     <i class="fa fa-envelope"></i>
                     Resend Welcome Email
                 </a>
-
-                <a class="m-btn btn btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/Edit/14218">
-                    <i class="fa fa-pencil"></i>
-                    Edit
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/Edit/14218" class="m-btn btn btn-secondary">
+                    <i class="fa fa-pencil"></i> Edit
                 </a>
+    
+        
+    </div>
+</div><div class="m-portlet__body ">            <form action="#" class="m-form m-form--fit m-form--label-align-right">
+            <div class="form-body">
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Username</label>
+                <div class="col-lg-9">
+                    test71
+                        <a class="d-inline-block ml-4" href="https://buddypunchapp-qa.azurewebsites.net/Employee/ChangeUsername/14218">
+                            <i class="fa fa-pencil"></i>
+                            Change
+                        </a>
 
-                <!-- <div class="btn-group" role="group" aria-label="...">
-                                        <div class="btn-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-user"></i> More Actions
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="left: 0px; position: absolute; top: 0px; transform: translate3d(0px, 40px, 0px); will-change: transform;">
-    
-                                <a class="dropdown-item" href="https://buddypunchapp-qa.azurewebsites.net/Face/ProfilePicture/14218">
-                                    <i class="fa fa-smile-o"></i> Set Profile Picture
-                                </a>
-    
-                                <a class="dropdown-item" href="https://buddypunchapp-qa.azurewebsites.net/Face/Faces/14218">
-                                    <i class="fa fa-smile-o"></i> Manage All Faces
-                                </a>
-                            </div>
-                        </div>
-                </div> -->
+                </div>
             </div>
-        </div><div class="m-portlet__body ">        <form action="#" class="m-form m-form--fit m-form--label-align-right">
-                <div class="form-body">
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Username</label>
-                        <div class="col-lg-9">
-                            test71
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Employee/ChangeUsername/14218"
-                                class="d-inline-block ml-4">
-                                <i class="fa fa-pencil"></i>
-                                Change
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Password</label>
-                        <div class="col-lg-9">
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Employee/ChangePassword/14218">
-                                <i class="fa fa-pencil"></i>
-                                Change
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">First Name</label>
-                        <div class="col-lg-9">
-    
-                            Will
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Last Name</label>
-                        <div class="col-lg-9">
-    
-                            Byers
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Email</label>
-                        <div class="col-lg-9">
-    
-                            <a href="mailto:etczerwonka+demo1@gmail.com">etczerwonka+demo1@gmail.com</a>
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Time Zone</label>
-                        <div class="col-lg-9">
-    
-                            (UTC-06:00) Central Time (US &amp; Canada)
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Overtime Type</label>
-                        <div class="col-lg-9">
-    
-                            40 Hour Work Week
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Employee Id</label>
-                        <div class="col-lg-9">
-    
-                            
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">
-                            Manager
-                            <a href="https://docs.buddypunch.com/faq/managers-what-are-they-and-how-do-they-work" target="blank">
-                                <i class="fa fa-question-circle"></i>
-                            </a>
-    
-                        </label>
-    
-                        <div class="col-lg-9">
-    
-                            No
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Face recognition turned on</label>
-                        <div class="col-lg-9">
-    
-                            Yes
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Active</label>
-                        <div class="col-lg-9">
-    
-                            Yes
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Requires Approval for Time Card Changes</label>
-                        <div class="col-lg-9">
-    
-                            Yes
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Requires Approval for future PTO Requests</label>
-                        <div class="col-lg-9">
-    
-                            Yes
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Phone Number</label>
-                        <div class="col-lg-9">
-    
-                            
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Birth Date</label>
-                        <div class="col-lg-9">
-    
-                            
-    
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Hire Date</label>
-                        <div class="col-lg-9">
-    
-                            
-    
-                        </div>
-                    </div>
-                   
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Pay Type</label>
-                        <div class="col-lg-9">                        
-                                                     
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">
-                            Pay Amount
-                                <a class="popovers" data-container="body" data-trigger="hover" data-content="Hidden from Employees and Managers" href="#" data-original-title="" title=""><i class="fa fa-question-circle"></i></a>
-                        </label>
-                        <div class="col-lg-9">
-                                 
-                                <div class="help-block">
-                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/PayAmountHistory/14218">View History</a>
-                                </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Other Information</label>
-                        <div class="col-lg-9">
-                        </div>
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Facial Recognition</label>
-                        <div class="col-lg-9">
-                            On (password required)
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Face"
-                                class="d-inline-block ml-4">
-                                <i class="fa fa-cog"></i>
-                                Facial Recognition Settings
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">GPS Settings</label>
-                        <div class="col-lg-9">
-                            Optional
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Account/GpsSettings"
-                                class="d-inline-block ml-4">
-                                <i class="fa fa-cog"></i>
-                                GPS Settings
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Time Entry Options</label>
-                        <div class="col-lg-9">
-                            Time Entry Options (duration)
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Account/TimeEntryOptions"
-                                class="d-inline-block ml-4">
-                                <i class="fa fa-cog"></i>
-                                Time Entry Settings
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 control-label">Webcam Settings</label>
-                        <div class="col-lg-9">
-                            Optional
-                            <a  href="https://buddypunchapp-qa.azurewebsites.net/Account/TimeEntryOptions"
-                                class="d-inline-block ml-4">
-                                <i class="fa fa-cog"></i>
-                                Webcam Settings
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="profile-picture">
-                        <img src="Dashboard_files/facial_recognition_login.png" class="img-fluid ml-auto mr-auto">
-                        <a href="https://buddypunchapp-qa.azurewebsites.net/Face/ProfilePicture/14218">Set Profile Picture</a>
-                        <br>
-                        <!-- FIXME: Add href for Manage All Faces link-->
-                        <a href="">Manage All Faces</a>
+                <div class="form-group m-form__group row">
+                    <label class="col-lg-3 control-label">Password</label>
+                    <div class="col-lg-9">
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/ChangePassword/14218">
+                            <i class="fa fa-pencil"></i>
+                            Change
+                        </a>
                     </div>
                 </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">First Name</label>
+                <div class="col-lg-9">
+
+                    Will
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Last Name</label>
+                <div class="col-lg-9">
+
+                    Byers
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Email</label>
+                <div class="col-lg-9">
+
+                    <a href="mailto:etczerwonka+demo1@gmail.com">etczerwonka+demo1@gmail.com</a>
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Time Zone</label>
+                <div class="col-lg-9">
+
+                    (UTC-06:00) Central Time (US &amp; Canada)
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Overtime Type</label>
+                <div class="col-lg-9">
+
+                    40 Hour Work Week
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Employee Id</label>
+                <div class="col-lg-9">
+
+                    
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">
+                    Manager
+                    <a href="https://docs.buddypunch.com/faq/managers-what-are-they-and-how-do-they-work" target="blank">
+                        <i class="fa fa-question-circle"></i>
+                    </a>
+
+                </label>
+
+                <div class="col-lg-9">
+
+                    No
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Active</label>
+                <div class="col-lg-9">
+
+                    Yes
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Requires Approval for Time Card Changes</label>
+                <div class="col-lg-9">
+
+                    Yes
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Requires Approval for future PTO Requests</label>
+                <div class="col-lg-9">
+
+                    Yes
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Phone Number</label>
+                <div class="col-lg-9">
+
+                    
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Birth Date</label>
+                <div class="col-lg-9">
+
+                    
+
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Hire Date</label>
+                <div class="col-lg-9">
+
+                    
+
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Pay Type</label>
+                <div class="col-lg-9">
+                    
+                </div>
+            </div>
+            <div class="form-group m-form__group row">
+            <label class="col-lg-3 control-label">
+                Pay Amount
+                    <a class="popovers" data-container="body" data-trigger="hover" data-content="Hidden from Employees and Managers" href="#" data-original-title="" title=""><i class="fa fa-question-circle"></i></a>
+            </label>
+            <div class="col-lg-9">
+                 
+                <div class="help-block">
+                    <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/PayAmountHistory/14218">View History</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Other Information</label>
+                <div class="col-lg-9">
+
+                    
+
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Automatic Break Rule</label>
+                <div class="col-lg-9">
+                    1 Hour Break
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/BreakRule" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            Automatic Break Rule Settings
+                        </a>
+
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row" id="facial-recognition">
+                <label class="col-lg-3 control-label">Facial Recognition</label>
+                <div class="col-lg-9">
+                    On
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Face" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            Facial Recognition Settings
+                        </a>
+
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row" id="gps-settings">
+                <label class="col-lg-3 control-label">GPS Setting</label>
+                <div class="col-lg-9">
+                    Required
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/GPSSettings" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            GPS Settings
+                        </a>
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-lg-3 control-label">Punch Limiting Rule</label>
+                <div class="col-lg-9">
+                    Not Assigned
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/PunchLimitRule" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            Punch Limiting Settings
+                        </a>
+
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row" id="time-entry">
+                <label class="col-lg-3 control-label">Time Entry Option</label>
+                <div class="col-lg-9">
+                    Punches &amp; Time Entry
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/TimeEntryOptions" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            Time Entry Settings
+                        </a>
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row" id="webcam">
+                <label class="col-lg-3 control-label">Webcam Setting</label>
+                <div class="col-lg-9">
+                    Off
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/WebcamSettings" class="d-inline-block ml-4">
+                            <i class="fa fa-cog"></i>
+                            Webcam Settings
+                        </a>
+                </div>
+            </div>
+
+            <div class="profile-picture">
+                <img src="Dashboard_files/facial_recognition_login.png" class="img-fluid ml-auto mr-auto">
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Face/ProfilePicture/14218">Set Profile Picture</a>
+                    <br>
+                    <a href="https://buddypunchapp-qa.azurewebsites.net/Face/Faces/14218">Manage All Faces</a>
+            </div>
+            </div>
             </form>
-        </div>
-    </div>
+</div></div>    </div>
 
-    <div id="employees-assigned"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Employees assigned to Jane Williams
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <!-- FIXME: Add href below for Edit Employee assignment -->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
-        <div class="m-portlet__body ">
-                <table class="table m-table-striped m-table no-footer" role="grid">
-                    <thead>
-                        <tr role="row">
-                            <th>Employee Name</th>
-                            <th>Permission</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr role="row">
-                            <td>Brianna M</td>
-                            <td>Approval</td>
-                        </tr>
-                        <tr role="row">
-                            <td>David Palmer</td>
-                            <td>View</td>
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-    </div>
 
-    <div id="locations"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Locations assigned to Will Byers
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Location"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Locations Settings
-                </a>
-                    
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditLocations/14218"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
-        <div class="m-portlet__body ">
-                <table class="table m-table-striped m-table no-footer" role="grid">
-                    <thead>
-                        <tr role="row">
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr role="row">
-                            <td>Alaska</td>
-                        </tr>
-                        <tr role="row">
-                            <td>Chicago</td>
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-    </div>
 
-    <div id="department-codes"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Department Codes assigned to Will Byers
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/JobCode"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Department Settings
-                </a>
-                    
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditJobCodes/14218"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
-        <div class="m-portlet__body ">
-                <table class="table m-table-striped m-table no-footer" role="grid">
-                    <thead>
-                        <tr role="row">
-                            <th>Department Code</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr role="row">
-                            <td>Acme Corporation</td>
-                        </tr>
-                        <tr role="row">
-                            <td>Acme Corporation</td>
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-    </div>
+        <div id="locations">
 
-    <div id="positions"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Positions assigned to Jane Williams
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Position"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Positions Settings
-                </a>
-                    
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditPositions/14218"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
-        <div class="m-portlet__body ">
-                <table class="table m-table-striped m-table no-footer" role="grid">
-                    <thead>
-                        <tr role="row">
-                            <th>Positions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr role="row">
-                            <td>Chef</td>
-                        </tr>
-                    </tbody>
-                </table>
-        </div>
-    </div>
 
-    <div id="pto"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            PTO for Jane Willians
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Account/PTOSettings"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    PTO Settings
-                </a>
-                    
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/PTOBank/PTOBankTransaction/14218"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-plus"></i>
-                    Add PTO Accrual Entry
-                </a>
-            </div>
-        </div>
-
-        <div class="m-portlet__body">
-            <div id="accountPTOEarningCodeActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountPTOEarningCodeActive_table" role="grid"
-                            aria-describedby="accountPTOEarningCodeActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountPTOEarningCodeActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="PTO Type: activate to sort column descending">
-                                        PTO Type</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPTOEarningCodeActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Balance with Future PTO: activate to sort column ascending">
-                                        Balance with Future PTO</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPTOEarningCodeActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Balance: activate to sort column ascending">
-                                        Balance</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPTOEarningCodeActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Actions: activate to sort column ascending">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Personal Time
-                                    </td>
-                                    <td>
-                                        25.801
-                                    </td>
-                                    <td>25.801</td>
-                                    <td>
-                                        <a  href="/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=2443"
-                                            class="btn btn-xs btn-sm btn-default btn-superlight btn-rounded">
-                                            <i class="fa fa-search"></i>
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Personal Time
-                                    </td>
-                                    <td>
-                                        25.801
-                                    </td>
-                                    <td>25.801</td>
-                                    <td>
-                                        <a  href="/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=2443"
-                                            class="btn btn-xs btn-sm btn-default btn-superlight btn-rounded">
-                                            <i class="fa fa-search"></i>
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Personal Time
-                                    </td>
-                                    <td>
-                                        25.801
-                                    </td>
-                                    <td>25.801</td>
-                                    <td>
-                                        <a  href="/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=2443"
-                                            class="btn btn-xs btn-sm btn-default btn-superlight btn-rounded">
-                                            <i class="fa fa-search"></i>
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            <span class="caption-subject font-blue-steel bold uppercase">
+                                Locations assigned to Will Byers
+                            </span>
+                        </h3>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="m-portlet__head-tools">
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Location" class="m-btn btn btn-secondary">
+                            <i class="fa fa-cog"></i>
+                            Location Settings
+                        </a>
 
-    </div>
 
-    <div id="automatic-breaks"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Automatic Break Rules
-                        </span>
-                    </h3>
+                    <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditLocations/14218" class="m-btn btn btn-secondary">
+                        <i class="fa fa-pencil"></i>
+                        Edit Assignment
+                    </a>
                 </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/BreakRule"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Automatic Break Settings
-                </a>
-                <!-- FIXME: Add href below for Edit Automatic Break Rules assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
+</div><div class="m-portlet__body ">                    <table class="table m-table-striped m-table no-footer">
+                        <thead>
+                            <tr>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr>
+                                        <td>
+                                            Alaska
+                                                                                    </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+</div></div>        </div>
 
-        <div class="m-portlet__body">
-            <div id="accountBreakRulesActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountBreakRulesActive_table" role="grid"
-                            aria-describedby="accountBreakRulesActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountBreakRulesActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending">
-                                        Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountBreakRulesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Hours in Shift to Trigger Automatic Break: activate to sort column ascending">
-                                        Hours in Shift to Trigger Automatic Break</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountBreakRulesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Break Time in Minutes: activate to sort column ascending">
-                                        Break Time in Minutes</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountBreakRulesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Actions: activate to sort column ascending">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        30 Minute Lunch
-                                    </td>
-                                    <td>
-                                        1.5
-                                    </td>
-                                    <td>30</td>
-                                    <td>
-                                        <!-- FIXME: Add href below for View Automatic Break Rules button-->
-                                        <a  href=""
-                                            class="btn btn-xs btn-sm btn-default btn-superlight btn-rounded">
-                                            <i class="fa fa-search"></i>
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        30 Minute Lunch
-                                    </td>
-                                    <td>
-                                        1.5
-                                    </td>
-                                    <td>30</td>
-                                    <td>
-                                        <!-- FIXME: Add href below for View Automatic Break Rules button-->
-                                        <a  href=""
-                                            class="btn btn-xs btn-sm btn-default btn-superlight btn-rounded">
-                                            <i class="fa fa-search"></i>
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div id="department-codes">
+
+
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            <span class="caption-subject font-blue-steel bold uppercase">
+                                Department Codes assigned to Will Byers
+                            </span>
+                        </h3>
                     </div>
                 </div>
+                <div class="m-portlet__head-tools">
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/JobCode" class="m-btn btn btn-secondary">
+                            <i class="fa fa-cog"></i>
+                            Department Settings
+                        </a>
+
+
+                    <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditJobCodes/14218" class="m-btn btn btn-secondary">
+                        <i class="fa fa-pencil"></i>
+                        Edit Assignment
+                    </a>
+                </div>
+</div><div class="m-portlet__body ">                    <table class="table m-table-striped m-table no-footer">
+                        <thead>
+                            <tr>
+                                <th>Department Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr>
+                                        <td>
+                                            Acme Corporation
+                                                                                    </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+</div></div>        </div>
+
+        <div id="positions">
+
+
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            <span class="caption-subject font-blue-steel bold uppercase">
+                                Positions assigned to Will Byers
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools">
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Position" class="m-btn btn btn-secondary">
+                            <i class="fa fa-cog"></i>
+                            Position Settings
+                        </a>
+
+
+                    <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditPositions/14218" class="m-btn btn btn-secondary">
+                        <i class="fa fa-pencil"></i>
+                        Edit Assignment
+                    </a>
+                </div>
+</div><div class="m-portlet__body ">                    <table class="table m-table-striped m-table no-footer">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr>
+                                        <td>
+                                            Closer
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+</div></div>        </div>
+
+        <div id="pto">
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                <span class="caption-subject font-blue-steel bold uppercase">
+                                    PTO for Will Byers
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="m-portlet__head-tools">
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/PTOSettings" class="m-btn btn btn-secondary">
+                            <i class="fa fa-cog"></i>
+                            PTO Settings
+                        </a>
+                        <a href="https://buddypunchapp-qa.azurewebsites.net/PTOBank/PTOBankTransaction/14218" class="m-btn btn btn-secondary">
+                            <i class="fa fa-plus"></i>
+                            Add PTO Accrual Entry
+                        </a>
+                    </div>
+</div><div class="m-portlet__body ">        <table class="table m-table-striped m-table no-footer">
+            <thead>
+            <tr>
+                <th>Action</th>
+                <th>PTO Type</th>
+                <th>Balance with Future PTO</th>
+                <th>Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <a href="https://buddypunchapp-qa.azurewebsites.net/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=2443" class="btn btn-xs btn-sm btn-default">
+                                <i class="fa fa-search"></i> View
+                            </a>
+                        </td>
+                        <td>Personal</td>
+                        <td>-69.6</td>
+                        <td>-69.6</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://buddypunchapp-qa.azurewebsites.net/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=69" class="btn btn-xs btn-sm btn-default">
+                                <i class="fa fa-search"></i> View
+                            </a>
+                        </td>
+                        <td>Sick</td>
+                        <td>-10</td>
+                        <td>-10</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="https://buddypunchapp-qa.azurewebsites.net/Report/PTOTypeBankForEmployee?staffId=14218&amp;ptoId=20" class="btn btn-xs btn-sm btn-default">
+                                <i class="fa fa-search"></i> View
+                            </a>
+                        </td>
+                        <td>Vacation</td>
+                        <td>657.75</td>
+                        <td>657.75</td>
+                    </tr>
+            </tbody>
+</table>
+</div></div>        </div>
+
+    <div id="pto-accrual-rules">
+    <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <span class="caption-subject font-blue-steel bold uppercase">
+                        PTO Accrual Rules
+                    </span>
+                </h3>
             </div>
         </div>
-
-    </div>
-
-    <div id="device-locks"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Device Locks
-                        </span>
-                    </h3>
-                </div>
+        <div class="m-portlet__head-tools">     
+                <a href="https://buddypunchapp-qa.azurewebsites.net/PTOBank/PTOAccrualRules" class="m-btn btn btn-secondary">
+                    <i class="fa fa-cog"></i>
+                    PTO Accrual Rule Settings
+                </a>
+        </div>
+</div><div class="m-portlet__body ">            <table class="table m-table-striped m-table no-footer">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Hours</th>
+                    <th>Frequency</th>
+                    <th>PTO Type</th>
+                </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>
+                                100 Hours now
+                            </td>
+                            <td>
+                                     100.000
+                            </td>
+                            <td>Yearly</td>
+                            <td>Vacation</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                40 Hours Annual
+                            </td>
+                            <td>
+                                     2.000
+                            </td>
+                            <td>Yearly</td>
+                            <td>Vacation</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Test add 35
+                            </td>
+                            <td>
+                                     35.000
+                            </td>
+                            <td>Yearly</td>
+                            <td>Vacation</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Test 15
+                            </td>
+                            <td>
+                                     15.000
+                            </td>
+                            <td>Yearly</td>
+                            <td>Sick</td>
+                        </tr>
+                </tbody>
+            </table>
+</div></div></div>
+    <div id="device-locks">
+    <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <span class="caption-subject font-blue-steel bold uppercase">
+                        Device Locks
+                    </span>
+                </h3>
             </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/DeviceLock"
-                    class="m-btn btn btn-secondary">
+        </div>
+        <div class="m-portlet__head-tools">     
+                <a href="https://buddypunchapp-qa.azurewebsites.net/DeviceLock" class="m-btn btn btn-secondary">
                     <i class="fa fa-cog"></i>
                     Device Locks Settings
-                </a>
-                <!-- FIXME: Add href below for Edit Device Locks assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
+                </a>                
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditDeviceLocks/14218" class="m-btn btn btn-secondary">
                     <i class="fa fa-pencil"></i>
                     Edit Assignment
                 </a>
+        </div>
+</div><div class="m-portlet__body ">            <span>No device locks assigned</span>
+</div></div></div>
+    <div id="geofences">
+    <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <span class="caption-subject font-blue-steel bold uppercase">
+                        Geofences
+                    </span>
+                </h3>
             </div>
         </div>
-
-        <div class="m-portlet__body">
-            <div id="accountDeviceLocksActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountDeviceLocksActive_table" role="grid"
-                            aria-describedby="accountDeviceLocksActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountDeviceLocksActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="Device Lock Name: activate to sort column descending">
-                                        Device Lock Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountDeviceLocksActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Employees Assigned: activate to sort column ascending">
-                                        Employees Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountDeviceLocksActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Active: activate to sort column ascending">
-                                        Active</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountDeviceLocksActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Actions: activate to sort column ascending">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="geofences"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Geofences
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/Geofence"
-                    class="m-btn btn btn-secondary">
+        <div class="m-portlet__head-tools">     
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Geofence" class="m-btn btn btn-secondary">
                     <i class="fa fa-cog"></i>
-                    Geofences Settings
-                </a>
-                <!-- FIXME: Add href below for Edit Geofences assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
+                    Geofence Settings
+                </a>            
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditGeofences/14218" class="m-btn btn btn-secondary">
                     <i class="fa fa-pencil"></i>
                     Edit Assignment
                 </a>
+        </div>
+</div><div class="m-portlet__body ">            <span>No geofences assigned</span>
+</div></div></div>
+    <div id="ip-address-locks">
+    <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <span class="caption-subject font-blue-steel bold uppercase">
+                        IP Address Locks
+                    </span>
+                </h3>
             </div>
         </div>
-
-        <div class="m-portlet__body">
-            <div id="accountGeofencesActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountGeofencesActive_table" role="grid"
-                            aria-describedby="accountGeofencesActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountGeofencesActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending">
-                                        Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Employees Assigned: activate to sort column ascending">
-                                        Employees Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Distance Allowed: activate to sort column ascending">
-                                        Distance Allowed</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Location Assigned: activate to sort column ascending">
-                                        Location Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Department Assigned: activate to sort column ascending">
-                                        Department Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Active: activate to sort column ascending">
-                                        Active</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountGeofencesActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Actions: activate to sort column ascending">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="ip-address-locks"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            IP Address Locks
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/IpAddressLock"
-                    class="m-btn btn btn-secondary">
+        <div class="m-portlet__head-tools">     
+                <a href="https://buddypunchapp-qa.azurewebsites.net/IpAddressLock" class="m-btn btn btn-secondary">
                     <i class="fa fa-cog"></i>
-                    IP Locks Settings
-                </a>
-                <!-- FIXME: Add href below for Edit IP Address Locks assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
+                    IP Address Lock Settings
+                </a>               
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditIpAddressLocks/14218" class="m-btn btn btn-secondary">
                     <i class="fa fa-pencil"></i>
                     Edit Assignment
                 </a>
+        </div>
+</div><div class="m-portlet__body ">            <span>No IP address locks assigned</span>
+</div></div></div>
+    <div id="overtime-alerts">
+    <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head">        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <h3 class="m-portlet__head-text">
+                    <span class="caption-subject font-blue-steel bold uppercase">
+                        Overtime Alerts
+                    </span>
+                </h3>
             </div>
         </div>
-
-        <div class="m-portlet__body">
-            <div id="accountIpAddressLocksActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountIpAddressLocksActive_table" role="grid"
-                            aria-describedby="accountIpAddressLocksActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountIpAddressLocksActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="IP Address: activate to sort column descending">
-                                        IP Address</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountIpAddressLocksActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Employee Assigned: activate to sort column ascending">
-                                        Employee Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountIpAddressLocksActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Active: activate to sort column ascending">
-                                        Active</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        184.59.206.120
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        184.59.206.120
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        184.59.206.120
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="overtime-alerts"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Overtime Alerts
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/OvertimeAlertRule"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Overtime Alert Settings
-                </a>
-                <!-- FIXME: Add href below for Edit Overtime Alerts assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
+        <div class="m-portlet__head-tools">     
+            <a href="https://buddypunchapp-qa.azurewebsites.net/OvertimeAlertRule" class="m-btn btn btn-secondary">
+                <i class="fa fa-cog"></i>
+                Overtime Alert Settings
+            </a>           
+                <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/EditOvertimeAlertRules/14218" class="m-btn btn btn-secondary">
                     <i class="fa fa-pencil"></i>
                     Edit Assignment
                 </a>
-            </div>
         </div>
-
-        <div class="m-portlet__body">
-            <div id="accountOvertimeAlertActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountOvertimeAlertActive_table" role="grid"
-                            aria-describedby="accountOvertimeAlertActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountOvertimeAlertActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending">
-                                        Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Type: activate to sort column ascending">
-                                        Type</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Hs : Min: activate to sort column ascending">
-                                        Hs : Min</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Employee Assigned: activate to sort column ascending">
-                                        Employee Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Send Email to Employee: activate to sort column ascending">
-                                        Send Email to Employee</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Send Email to Manager: activate to sort column ascending">
-                                        Send Email to Manager</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Send Email to Admin: activate to sort column ascending">
-                                        Send Email to Admin</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountOvertimeAlertActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Active: activate to sort column ascending">
-                                        Active</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Name goes here
-                                    </td>
-                                    <td>
-                                        Weekly
-                                    </td>
-                                    <td>
-                                        40:00
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Name goes here
-                                    </td>
-                                    <td>
-                                        Weekly
-                                    </td>
-                                    <td>
-                                        40:00
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                                <tr role="row">
-                                    <td class="sorting_1">
-                                        Name goes here
-                                    </td>
-                                    <td>
-                                        Weekly
-                                    </td>
-                                    <td>
-                                        40:00
-                                    </td>
-                                    <td>
-                                        1
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                    <td>
-                                        Yes
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div id="punch-limits"
-        class="m-portlet m-portlet--responsive-mobile m-portlet--mobile">
-
-        <div class="m-portlet__head">
-            <div class="m-portlet__head-caption">
-                <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <span class="caption-subject font-blue-steel bold uppercase">
-                            Punch Limits
-                        </span>
-                    </h3>
-                </div>
-            </div>
-            <div class="m-portlet__head-tools">
-                <a  href="https://buddypunchapp-qa.azurewebsites.net/PunchLimitRule"
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-cog"></i>
-                    Punch Limits Settings
-                </a>
-                <!-- FIXME: Add href below for Edit Punch Limits assignment-->
-                <a  href=""
-                    class="m-btn btn btn-secondary">
-                    <i class="fa fa-pencil"></i>
-                    Edit Assignment
-                </a>
-            </div>
-        </div>
-
-        <div class="m-portlet__body">
-            <div id="accountPunchLimitsActive_table_wrapper"
-                class="dataTables_wrapper profile_dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table class="table m-table m-table-striped dataTable no-footer"
-                            id="accountPunchLimitsActive_table" role="grid"
-                            aria-describedby="accountPunchLimitsActive_table_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0"
-                                        aria-controls="accountPunchLimitsActive_table" rowspan="1" colspan="1"
-                                        aria-sort="ascending"
-                                        aria-label="Name: activate to sort column descending">
-                                        Name</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Employees Assigned: activate to sort column ascending">
-                                        Employees Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Distance Allowed: activate to sort column ascending">
-                                        Distance Allowed</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Location Assigned: activate to sort column ascending">
-                                        Location Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Department Assigned: activate to sort column ascending">
-                                        Department Assigned</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Active: activate to sort column ascending">
-                                        Active</th>
-                                    <th class="sorting" tabindex="0" aria-controls="accountPunchLimitsActive_table"
-                                        rowspan="1" colspan="1"
-                                        aria-label="Actions: activate to sort column ascending">
-                                        Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+</div><div class="m-portlet__body ">            <table class="table m-table-striped m-table no-footer">
+                <thead>
+                <tr>
+                    <th>Name</th>     
+                </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>
+                                Daily over 1
+                            </td>                            
+                        </tr>
+                </tbody>
+            </table>
+</div></div></div>
 </div>
+
 </div>
+
 
 
 
@@ -1995,7 +1483,7 @@ fbq('track', 'PageView');
             <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
                 <div class="m-footer__copyright">
                     © 2013-2019 BuddyPunch.com<br>
-                    Version: 4.1.19084.3
+                    Version: 4.1.19105.2
                 </div>
             </div>
             <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
@@ -2015,7 +1503,7 @@ fbq('track', 'PageView');
                         "$email": "etczerwonka+demo1@gmail.com",
                         'Company': 'Buddy Demo',
                         'Plan': 'Time &amp; Attendance + Scheduling 15-19 Employees Annually',
-                        'Active Employees': 17
+                        'Active Employees': 19
                     });
         </script>
 
@@ -2036,7 +1524,7 @@ fbq('track', 'PageView');
         },
         'Company': 'Buddy Demo',
         'Plan': 'Time &amp; Attendance + Scheduling 15-19 Employees Annually',
-        'Active Employees': 17,
+        'Active Employees': 19,
         app_id: 'y9a0fwwv',
         user_id: '14105', // User ID
         user_hash: 'A0D4999070FB98371E3AF30ADD6990EE777308AA9CEEB2D29183A265B1BEA6BF'
@@ -2112,14 +1600,14 @@ fbq('track', 'PageView');
         <div class="modal-content">
             <div class="modal-header align-items-center justify-content-start">
                 <h5 class="modal-title" id="messageModalLabel">Send Message</h5>
-                <a href="https://buddypunchapp-qa.azurewebsites.net/Notification" class="btn btn-secondary text-uppercase ml-auto">Message log</a>
+                <a href="https://buddypunchapp-qa.azurewebsites.net/MessageLog" class="btn btn-secondary text-uppercase ml-auto">Message log</a>
                 <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <form action="/notification/sendmessage" method="POST" id="messageModalForm">
                 <div class="modal-body">
-                    <input name="__RequestVerificationToken" type="hidden" value="Kr9ccPzK_TAQ0bFLv9Cot5kYFs9N_5QAuaefwIc-eCgZ1pnl-0GwqsOj8M2dQo68_AxBSdns0xajjZ2MG63wkgAf3F_9WXi7yjRhC91gx7cVyodmShJHNfetuWo1oMqHBm1_ZVfczP-HbF4MHWHnWA2">
+                    <input name="__RequestVerificationToken" type="hidden" value="PfyzOOlt4mX6IHo8nG5pwcaYr31KgmTbNgIOLjKhznFALuDf2e2uarAsuT27NcFqt0DC0-dr5Y-OacV-k5ErVeN8Ebl_8Lq5IKM5FGVuAmxJKG-A9gv1fpE_IxGzfejr2kXRwOuMF1wu24FNCTQEAw2">
                     <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary active">
                             <input type="radio" name="Type" id="email" autocomplete="off" value="email" checked="checked">
@@ -2143,6 +1631,7 @@ fbq('track', 'PageView');
                                     <option value="14185">James Cummingham</option>
                                     <option value="14113">Joseph Flowers</option>
                                     <option value="12057">Joe Hodgin</option>
+                                    <option value="14096">Drew Kent</option>
                                     <option value="14226">First Name Last Name</option>
                                     <option value="14217">Leanne Mercado</option>
                                     <option value="14186">Suzie Orman</option>
@@ -2154,17 +1643,20 @@ fbq('track', 'PageView');
                                     <option value="14100">Kevin Singleton</option>
                                     <option value="14162">Sam Smith</option>
                                     <option value="14093">Bart Star</option>
+                                    <option value="14257">Test Test</option>
+                                    <option value="14258">Test Test</option>
+                                    <option value="14165">Eric Test</option>
                                     <option value="14211">Sam Wise</option>
                             </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="StaffIds" title="Select"><div class="filter-option"><div class="filter-option-inner">Select</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="bs-actionsbox"><div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-light">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-light">Deselect All</button></div></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="Subject">Subject</label>
-                        <input type="text" class="form-control mw-100" id="Subject" name="Subject" placeholder="Enter message subject">
+                        <input type="text" class="form-control mw-100" id="Subject" name="Subject" placeholder="Enter message subject" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="Message">Message</label>
-                        <textarea class="form-control" id="Message" name="Message" rows="3"></textarea>
+                        <textarea class="form-control" id="Message" name="Message" rows="3" autocomplete="off"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -2182,8 +1674,37 @@ fbq('track', 'PageView');
 
     <script type="text/javascript" src="Dashboard_files/bundle.js"></script>
     <script type="text/javascript" src="Dashboard_files/datatables.js"></script>
-
+    
     <script type="text/javascript">
+        $(function () {
+            if (location.hash !== "") {
+                var hash = location.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 150
+                }, 600, function () {
+                    if (history.pushState) {
+                        history.pushState(null, null, hash);
+                    }
+                });
+            }
+        });
+
+        $("#profile-sidebar a").on('click', function(event) {
+            event.preventDefault();
+
+            if (this.hash !== "") {
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top - 150
+                }, 600, function(){
+                    if(history.pushState) {
+                        history.pushState(null, null, hash);
+                    }
+                });
+            }
+
+        }); 
+
         // NOTE: THIS CODE SHOULD BE ADDED ONLY INTO PROFILE PAGE
         jQuery(document).ready(function () {
 
@@ -2216,14 +1737,6 @@ fbq('track', 'PageView');
                 });
 
             }
-
-            initDataTable('#accountPTOEarningCodeActive_table');
-            initDataTable('#accountBreakRulesActive_table');
-            initDataTable('#accountDeviceLocksActive_table');
-            initDataTable('#accountGeofencesActive_table');
-            initDataTable('#accountIpAddressLocksActive_table');
-            initDataTable('#accountOvertimeAlertActive_table');
-            initDataTable('#accountPunchLimitsActive_table');
         });
     </script>
     
@@ -2315,4 +1828,4 @@ fbq('track', 'PageView');
 
 
 
-<div class="modal fade" id="session-timeout-dialog">               <div class="modal-dialog">                 <div class="modal-content">                   <div class="modal-header">                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                     <h4 class="modal-title">Session Timeout Notification</h4>                   </div>                   <div class="modal-body">                     <p>Your session is about to expire, please click below to stay logged in.</p>                                                             </div>                   <div class="modal-footer">                     <button id="session-timeout-dialog-logout" type="button" class="btn btn-default">Logout</button>                     <button id="session-timeout-dialog-keepalive" type="button" class="btn btn-primary" data-dismiss="modal">Stay Connected</button>                   </div>                 </div>               </div>              </div></body><!-- END BODY --></html>
+<div class="modal fade" id="session-timeout-dialog" style="display: none;" aria-hidden="true">               <div class="modal-dialog">                 <div class="modal-content">                   <div class="modal-header">                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                     <h4 class="modal-title">Session Timeout Notification</h4>                   </div>                   <div class="modal-body">                     <p>Your session is about to expire, please click below to stay logged in.</p>                                                             </div>                   <div class="modal-footer">                     <button id="session-timeout-dialog-logout" type="button" class="btn btn-default">Logout</button>                     <button id="session-timeout-dialog-keepalive" type="button" class="btn btn-primary" data-dismiss="modal">Stay Connected</button>                   </div>                 </div>               </div>              </div></body><!-- END BODY --></html>
