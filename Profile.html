@@ -1668,7 +1668,7 @@ fbq('track', 'PageView');
     <script type="text/javascript" src="Dashboard_files/datatables.js"></script>
     
     <script type="text/javascript">
-        $(function () {
+        jQuery(document).ready(function () {
             if (location.hash !== "") {
                 var hash = location.hash;
                 $('html, body').animate({
@@ -1689,17 +1689,19 @@ fbq('track', 'PageView');
                 var elem = $(this);
                 var currScroll = $('html, body').scrollTop();
                 var scrollTo = $(hash).offset().top - 150;
+                $('body').scrollspy('dispose');
+                $("#profile-sidebar a").removeClass('active');
+                elem.addClass('active');
                 $('html, body').animate({
                     scrollTop: scrollTo
                 }, 600, function(){
                     if(history.pushState) {
                         history.pushState(null, null, hash);
                     }
-                });
-                setTimeout(function() {
+                    $('body').scrollspy({ target: '#profile-sidebar', offset: 250 });
                     $("#profile-sidebar a").removeClass('active');
                     elem.addClass('active');
-                }, 800);
+                });
             }
 
         }); 
