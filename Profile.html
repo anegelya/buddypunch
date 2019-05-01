@@ -1669,14 +1669,17 @@ fbq('track', 'PageView');
     
     <script type="text/javascript">
         jQuery(document).ready(function () {
+            window.scrollTo(0, 0);
             if (location.hash !== "") {
                 var hash = location.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top - 150
-                }, 600, function () {
-                    if (history.pushState) {
-                        history.pushState(null, null, hash);
-                    }
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - 150
+                    }, 600, function () {
+                        if (history.pushState) {
+                            history.pushState(null, null, hash);
+                        }
+                    });
                 });
             }
         });
@@ -1724,7 +1727,7 @@ fbq('track', 'PageView');
                 var stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
                 var diff = stopPoint + stickOffset;
 
-                $(window).on('scroll resize', function(){ // scroll event
+                $(window).on('load scroll resize', function(){ // scroll event
                     var windowTop = $(window).scrollTop(); // returns number
                     var width = $parent.width();
 
