@@ -799,7 +799,7 @@ fbq('track', 'PageView');
 <div class="row">
 <div class="col-md-2">
     <!-- Sidebar -->
-    <div id="profile-sidebar" class="sticky d-none d-md-block" style="position: fixed; top: 120px; width: 242.367px;">
+    <div id="profile-sidebar" class="sticky d-none d-md-block" style="position: absolute; top: 120px; width: 242.367px;">
         <div class="text-right">
             <nav class="nav nav-pills">
                 <a href="#top" class="nav-link w-100 active">Profile</a>
@@ -1730,6 +1730,8 @@ fbq('track', 'PageView');
                 $(window).on('load scroll resize', function(){ // scroll event
                     var windowTop = $(window).scrollTop(); // returns number
                     var width = $parent.width();
+
+                    console.warn('LLLLLLOOOOOOOOADDEEEED', stickyTop, windowTop, stickOffset);
 
                     if (stopPoint < windowTop) {
                         $sticky.css({ position: 'absolute', top: diff, width: width });
