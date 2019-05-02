@@ -1688,6 +1688,18 @@ fbq('track', 'PageView');
             }
         });
 
+        $(document).on("click", ".m-portlet .btn", function(event) {
+            event.preventDefault();
+
+            var hash = $(this).parents('.m-portlet').parent()[0].id;
+            if(hash) {
+                if(history.pushState) {
+                    history.pushState(null, null, '#' + hash);
+                    window.location = $(this)[0].href;
+                }
+            }
+        });
+
         $("#profile-sidebar a").on('click', function(event) {
             event.preventDefault();
 
