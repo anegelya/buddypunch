@@ -1672,15 +1672,19 @@ fbq('track', 'PageView');
             window.scrollTo(0, 0);
             if (location.hash !== "") {
                 var hash = location.hash;
+                $('body').scrollspy('dispose');
+                $("#profile-sidebar a").removeClass('active');
                 setTimeout(function() {
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top - 150
                     }, 600, function () {
-                        if (history.pushState) {
-                            history.pushState(null, null, hash);
-                        }
+                        $('body').scrollspy({ target: '#profile-sidebar', offset: 250 });
+                        $("#profile-sidebar a").removeClass('active');
+                        $('[href="'+hash+'"').addClass('active');
                     });
                 });
+            } else {
+                $('body').scrollspy({ target: '#profile-sidebar', offset: 250 });
             }
         });
 
@@ -1711,8 +1715,6 @@ fbq('track', 'PageView');
 
         // NOTE: THIS CODE SHOULD BE ADDED ONLY INTO PROFILE PAGE
         jQuery(document).ready(function () {
-
-            $('body').scrollspy({ target: '#profile-sidebar', offset: 250 });
 
             var $sticky = $('.sticky');
             var $parent = $sticky.parent();
