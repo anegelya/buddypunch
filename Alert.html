@@ -957,7 +957,7 @@
                         </div>
                     </div>
                     <div class="m-portlet__body ">
-                        <form action="/AlertRule/Create" method="post" novalidate="novalidate">
+                        <form action="/AlertRule/Create" method="post" novalidate="novalidate" id="alertRulesApp">
                             <div class="m-form">
                                 <input name="__RequestVerificationToken" type="hidden"
                                     value="n0sS81mvMJLEQoPeWdOp1-XextbTR6QXawflY2JHC-PKaCM4-FJ2gxzaS9jXQCUewKQET4Fwl4O4DcPkFhtGLCy4TeFzYTEyt-MJETK5Azi_E8fOEQpQ00RjoPt65QqBw9YwhnOgPW826sA7oBoATA2">
@@ -976,9 +976,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label" for="Type">Type</label>
-                                    <select class="form-control input-small" data-val="true"
+                                    <select class="form-control input-medium" data-val="true"
                                         data-val-number="The field AlertRuleTypeId must be a number."
-                                        id="AlertRuleTypeId" name="AlertRuleTypeId">
+                                        id="AlertRuleTypeId" name="AlertRuleTypeId"
+                                        v-model="alertRuleTypeId">
                                         <option value="1" selected="selected">Early In Alert</option>
                                         <option value="2">Late In Alert</option>
                                         <option value="3">Early Out Alert</option>
@@ -987,63 +988,233 @@
                                         <option value="6">Missed Out Alert</option>
                                         <option value="7">Shift Start Reminder</option>
                                         <option value="8">Shift End Reminder</option>
-                                        <option value="9">No Shift Punch In Alert</option>
+                                        <option value="9">Punch In Alert (No Shift)</option>
                                         <option value="10">Punch In Reminder</option>
-                                        <option value="11">Submit Time Card Reminder</option>
+                                        <option value="11">Punch Out Reminder</option>
+                                        <option value="12">Submit Time Card Reminder</option>
                                     </select>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td style="padding-right: 5px;">
-                                                    <label class="control-label">Hours</label>
-                                                    <input class="form-control input-xsmall" data-val="true"
-                                                        data-val-number="The field Hours must be a number."
-                                                        data-val-range="Hours must be between 0 and 168"
-                                                        data-val-range-max="1000" data-val-range-min="0"
-                                                        data-val-regex="The field Hours should be a positive or negative non-decimal number."
-                                                        data-val-regex-pattern="^-?\d+$"
-                                                        data-val-required="Hours is required" id="Hours" name="Hours"
-                                                        type="text" value="0">
-                                                    <span class="field-validation-valid" data-valmsg-for="Hours"
-                                                        data-valmsg-replace="true"></span>
-                                                </td>
-                                                <td>
-                                                    <label class="control-label">Minutes</label>
-                                                    <input class="form-control input-xsmall" data-val="true"
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-info py-3 px-4 text-white">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div>
+                                        <div class="col-11">
+                                            <div>{{preNote}} 
+                                                <div class="d-inline-flex">
+                                                <div class="input-group d-inline-flex w-auto"
+                                                    v-if="isShowMinutes">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="minutes-label">Minutes</span>
+                                                    </div>
+                                                    <input class="form-control input-small d-inline"
+                                                        data-val="true"
                                                         data-val-number="The field Minutes must be a number."
                                                         data-val-range="Minutes must be between 0 and 59"
                                                         data-val-range-max="59" data-val-range-min="0"
                                                         data-val-regex="The field Minutes should be a positive or negative non-decimal number."
                                                         data-val-regex-pattern="^-?\d+$"
                                                         data-val-required="Minutes is required" id="Minutes"
-                                                        name="Minutes" type="text" value="0">
+                                                        name="Minutes" type="text" value="0"
+                                                        aria-label="Minutes" aria-describedby="minutes-label"
+                                                        style="max-width: 6em;">
+                                                </div>
                                                     <span class="field-validation-valid" data-valmsg-for="Minutes"
                                                         data-valmsg-replace="true"></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                </div>
+                                                {{postNote}}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="m-checkbox"><input checked="checked" id="SendEmailToEmployee"
-                                            name="SendEmailToEmployee" type="checkbox" value="true"><input
-                                            name="SendEmailToEmployee" type="hidden" value="false"> Send Email To
-                                        Employee<span></span></label>
+
+                                <div class="form-group d-flex" id="schedule-set" v-if="isShowScheduleSet">
+                                    <div class="col-1 pl-0"></div>
+                                    <div>
+                                        <div class="d-flex align-items-baseline"
+                                            v-for="(day, key) in weekDays" :key="key">
+                                            <div class="col">
+                                                <label class="m-checkbox">
+                                                    <input checked="checked"
+                                                        :id="day"
+                                                        :name="day"
+                                                        type="checkbox"
+                                                        value="true">
+                                                        {{day}}<span></span>
+                                                </label>
+                                            </div>
+                                            <div class="col pl-0">
+                                                <div class="bootstrap-timepicker timepicker timepicker-default">
+                                                    <input autocomplete="off"
+                                                        class="form-control m-input timepicker"
+                                                        :id="day + 'Time'"
+                                                        :name="day + 'Time'"
+                                                        type="text"
+                                                        value="8:00 AM">
+                                                    <span class="field-validation-valid" :data-valmsg-for="day + 'Time'" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="m-checkbox"><input checked="checked" id="SendEmailToManager"
-                                            name="SendEmailToManager" type="checkbox" value="true"><input
-                                            name="SendEmailToManager" type="hidden" value="false"> Send Email To
-                                        Manager<span></span></label>
+
+                                <div class="form-group" id="pay-period-days-set" v-if="isShowPayPeriodDaysSet">
+                                    <div class="d-flex align-items-baseline">
+                                        <input type="radio" name="PayPeriodDays" id="PayPeriodDaysBefore" value="Before" checked>
+                                        <div class="input-group d-flex w-auto m-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="days-before-label">Days</span>
+                                            </div>
+                                            <input class="form-control input-small d-inline"
+                                                data-val="true"
+                                                data-val-number="The field Days must be a number."
+                                                data-val-range="Days must be between 0 and 30"
+                                                data-val-range-max="30" data-val-range-min="0"
+                                                data-val-regex="The field Days should be a positive non-decimal number."
+                                                data-val-regex-pattern="^\d+$"
+                                                data-val-required="Days is required" id="DaysBeforePayPeriod"
+                                                name="DaysBeforePayPeriod" type="text" value="0"
+                                                aria-label="DaysBeforePayPeriod" aria-describedby="days-before-label"
+                                                style="max-width: 6em;">
+                                        </div>
+                                        <span>before the end of pay period.</span>
+                                    </div>
+                                    <div class="d-flex align-items-baseline">
+                                        <input type="radio" name="PayPeriodDays" id="PayPeriodDaysAfter" value="After">
+                                        <div class="input-group d-flex w-auto m-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="days-after-label">Days</span>
+                                            </div>
+                                            <input class="form-control input-small d-inline"
+                                                data-val="true"
+                                                data-val-number="The field Days must be a number."
+                                                data-val-range="Days must be between 0 and 30"
+                                                data-val-range-max="30" data-val-range-min="0"
+                                                data-val-regex="The field Days should be a positive non-decimal number."
+                                                data-val-regex-pattern="^\d+$"
+                                                data-val-required="Days is required" id="DaysAfterPayPeriod"
+                                                name="DaysAfterPayPeriod" type="text" value="0"
+                                                aria-label="DaysAfterPayPeriod" aria-describedby="days-after-label"
+                                                style="max-width: 6em;">
+                                        </div>
+                                        <span>after the pay period ends.</span>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="m-checkbox"><input checked="checked" id="SendEmailToAdministrator"
-                                            name="SendEmailToAdministrator" type="checkbox" value="true"><input
-                                            name="SendEmailToAdministrator" type="hidden" value="false"> Send Email To
-                                        Administrator<span></span></label>
+
+                                <div class="form-group d-flex">
+                                    <div class="col-1 pl-0">
+                                        <p class="mt-3">Send to</p>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-baseline my-2">
+                                            <div class="col">
+                                                <label class="m-checkbox">
+                                                    <input checked="checked"
+                                                        id="SendToEmployee"
+                                                        name="SendToEmployee"
+                                                        type="checkbox"
+                                                        value="true">
+                                                    Employee<span></span>
+                                                </label>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle col" data-toggle="buttons">
+                                                <label class="btn btn-secondary font-weight-bold active">
+                                                    <input type="radio"
+                                                        name="SendToEmployeeType"
+                                                        id="SendToEmployeeEmail"
+                                                        class="d-none"
+                                                        value="Email"
+                                                        checked="checked">Email
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToEmployeeType"
+                                                        id="SendToEmployeePush"
+                                                        class="d-none"
+                                                        value="Push">Push
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToEmployeeType"
+                                                        id="SendToEmployeeBoth"
+                                                        value="Both">Both
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-baseline my-2">
+                                            <div class="col">
+                                                <label class="m-checkbox">
+                                                    <input checked="checked"
+                                                        id="SendToManager"
+                                                        name="SendToManager"
+                                                        type="checkbox"
+                                                        value="true">
+                                                    Manager<span></span>
+                                                </label>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle col" data-toggle="buttons">
+                                                <label class="btn btn-secondary font-weight-bold active">
+                                                    <input type="radio"
+                                                        name="SendToManagerType"
+                                                        id="SendToManagerEmail"
+                                                        class="d-none"
+                                                        value="Email"
+                                                        checked="checked">Email
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToManagerType"
+                                                        id="SendToManagerPush"
+                                                        class="d-none"
+                                                        value="Push">Push
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToManagerType"
+                                                        id="SendToManagerBoth"
+                                                        value="Both">Both
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-baseline my-2">
+                                            <div class="col">
+                                                <label class="m-checkbox">
+                                                    <input checked="checked"
+                                                        id="SendToAdministrator"
+                                                        name="SendToAdministrator"
+                                                        type="checkbox"
+                                                        value="true">
+                                                    Administrator<span></span>
+                                                </label>
+                                            </div>
+                                            <div class="btn-group btn-group-toggle col" data-toggle="buttons">
+                                                <label class="btn btn-secondary font-weight-bold active">
+                                                    <input type="radio"
+                                                        name="SendToAdministratorType"
+                                                        id="SendToAdministratorEmail"
+                                                        class="d-none"
+                                                        value="Email"
+                                                        checked="checked">Email
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToAdministratorType"
+                                                        id="SendToAdministratorPush"
+                                                        class="d-none"
+                                                        value="Push">Push
+                                                </label>
+                                                <label class="btn btn-secondary font-weight-bold">
+                                                    <input type="radio"
+                                                        name="SendToAdministratorType"
+                                                        id="SendToAdministratorBoth"
+                                                        value="Both">Both
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="m-checkbox"><input checked="checked" id="Active" name="Active"
                                             type="checkbox" value="true"><input name="Active" type="hidden"
@@ -1745,6 +1916,165 @@
         });
 
 
+    </script>
+
+    <script>
+        // NOTE: This script should be located only on Alert Rules Page
+        $(document).ready(function() {
+            var app = new Vue({
+                el: '#alertRulesApp',
+                data: {
+                    alertRuleTypeId: '1',
+                    alertRulesData: {
+                        '1': {
+                            preNote: 'The alert will send if the employee punched in:',
+                            postNote: 'or more before the start of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '2': {
+                            preNote: 'The alert will send if the employee punched in:',
+                            postNote: 'or more after the start of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '3': {
+                            preNote: 'The alert will send if the employee punches out:',
+                            postNote: 'or more before the end of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '4': {
+                            preNote: 'The alert will send if the employee punches out:',
+                            postNote: 'or more after the end of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '5': {
+                            preNote: 'The alert will send if the employee does not punch in within:',
+                            postNote: 'of the start of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '6': {
+                            preNote: 'The alert will send if the employee does not punch out within:',
+                            postNote: 'of the end of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '7': {
+                            preNote: 'The alert will send if the employee does not punch in within:',
+                            postNote: 'of the start of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '8': {
+                            preNote: 'The alert will send if the employee does not punch out within:',
+                            postNote: 'of the end of their shift.',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '9': {
+                            preNote: 'The alert will send if the employee chooses "No Shift" when punching in.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '10': {
+                            preNote: 'The alert will send if the employee does not punch in by the schedule set below.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: true,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '11': {
+                            preNote: 'The alert will send if the employee does not punch out by the schedule set below.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: true,
+                            isShowPayPeriodDaysSet: false,
+                        },
+                        '12': {
+                            preNote: 'The alert will send if the employee\'s time card is in "Draft" or "Rejected" status.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: true,
+                        },
+                    },
+                    weekDays: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday"
+                    ],
+                },
+                computed: {
+                    preNote: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].preNote;
+                    },
+                    postNote: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].postNote;
+                    },
+                    isShowMinutes: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].isShowMinutes;
+                    },
+                    isShowScheduleSet: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].isShowScheduleSet;
+                    },
+                    isShowPayPeriodDaysSet: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].isShowPayPeriodDaysSet;
+                    },
+                },
+                watch: {
+                    isShowScheduleSet: function(val) {
+                        if(val === true) {
+                            var _this = this;
+                            setTimeout(function() {
+                                _this.initDatetimepicker();
+                            }, 1);
+                        }
+                    },
+                },
+                methods: {
+                    initDatetimepicker: function() {
+                        $('.timepicker').datetimepicker({
+                            format: 'LT',
+                            widgetPositioning: {
+                                horizontal: 'auto',
+                                vertical: 'bottom'
+                            },
+                            icons: {
+                                time: 'fa fa-time',
+                                date: 'fa fa-calendar',
+                                up: 'fa fa-chevron-up',
+                                down: 'fa fa-chevron-down',
+                                previous: 'fa fa-chevron-left',
+                                next: 'fa fa-chevron-right',
+                                today: 'fa fa-screenshot',
+                                clear: 'fa fa-trash',
+                                close: 'fa fa-remove'
+                            }
+                        });
+                    }
+                },
+                mounted() {
+                    this.initDatetimepicker();
+                },
+            });
+        });
     </script>
     <!-- END JAVASCRIPTS -->
 
