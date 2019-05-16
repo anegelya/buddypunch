@@ -1021,7 +1021,10 @@
                             <div class="m-portlet__head">
                                 <div class="m-portlet__head-caption">
                                     <div class="m-portlet__head-title">
-                                        <h3 class="m-portlet__head-text ">Email Preferences</h3>
+                                        <h3 class="m-portlet__head-text ">Communication Preferences
+                                            <br>
+                                            <small class="pl-0 font-weight-bold">Choose how you will get notified:</small>
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
@@ -1037,43 +1040,348 @@
 
 
 
-                                        <div class="form-group">
-                                            <label class="m-checkbox"><input checked="checked"
-                                                    id="SubscribedToPunchChangeEmail"
-                                                    name="SubscribedToPunchChangeEmail" type="checkbox"
-                                                    value="true"><input name="SubscribedToPunchChangeEmail"
-                                                    type="hidden" value="false"> Receive Punch Change
-                                                Emails<span></span></label>
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Punch Changes</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                            id="SubscribedToPunchChangeEmail"
+                                                            name="SubscribedToPunchChangeEmail" type="checkbox"
+                                                            value="true"><input name="SubscribedToPunchChangeEmail"
+                                                            type="hidden" value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="m-checkbox"><input checked="checked"
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Notifications on each Punch</span>
+                                                <a href="https://docs.buddypunch.com/help-using-buddy-punch/setup-questions/i-would-like-to-get-an-email-notification-on-every-punch-in-or-out"
+                                                    target="blank"><i class="fa fa-question-circle"></i> How does this
+                                                    work</a>
+                                            </div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
                                                     id="SubscribedToTimesheetPunchEmail"
                                                     name="SubscribedToTimesheetPunchEmail" type="checkbox"
                                                     value="true"><input name="SubscribedToTimesheetPunchEmail"
-                                                    type="hidden" value="false"> Receive Notification Emails on every
-                                                Punch<span></span></label>
-                                            <a href="https://docs.buddypunch.com/help-using-buddy-punch/setup-questions/i-would-like-to-get-an-email-notification-on-every-punch-in-or-out"
-                                                target="blank"><i class="fa fa-question-circle"></i> How does this
-                                                work</a>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="m-checkbox"><input checked="checked"
-                                                    id="SubscribedToTimesheetApprovalStatusChangeEmail"
-                                                    name="SubscribedToTimesheetApprovalStatusChangeEmail"
-                                                    type="checkbox" value="true"><input
-                                                    name="SubscribedToTimesheetApprovalStatusChangeEmail" type="hidden"
-                                                    value="false"> Receive Time Card Approval Status Change
-                                                Emails<span></span></label>
+                                                    type="hidden" value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
                                         </div>
 
 
-                                        <div class="form-group">
-                                            <label class="m-checkbox"><input checked="checked"
-                                                    id="SubscribedToOvertimeAlerts" name="SubscribedToOvertimeAlerts"
-                                                    type="checkbox" value="true"><input
-                                                    name="SubscribedToOvertimeAlerts" type="hidden" value="false"> Alert
-                                                When Approaching Overtime<span></span></label>
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Time Card Approval Status Change</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToTimesheetApprovalStatusChangeEmail"
+                                                        name="SubscribedToTimesheetApprovalStatusChangeEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToTimesheetApprovalStatusChangeEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 ml-5">
+                                            <div class="col"><span>PTO Changes</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToPTOChangesEmail"
+                                                        name="SubscribedToPTOChangesEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPTOChangesEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 ml-2">
+                                            <h5>Alerts:</h5>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Overtime</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToOvertimeAlertsPush"
+                                                        name="SubscribedToOvertimeAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToOvertimeAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToOvertimeAlertsEmail"
+                                                        name="SubscribedToOvertimeAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToOvertimeAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Early In</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToEarlyInAlertsPush"
+                                                        name="SubscribedToEarlyInAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToEarlyInAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToEarlyInAlertsEmail"
+                                                        name="SubscribedToEarlyInAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToEarlyInAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Late In</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToLateInAlertsPush"
+                                                        name="SubscribedToLateInAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToLateInAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToLateInAlertsEmail"
+                                                        name="SubscribedToLateInAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToLateInAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Early Out</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToEarlyOutAlertsPush"
+                                                        name="SubscribedToEarlyOutAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToEarlyOutAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToEarlyOutAlertsEmail"
+                                                        name="SubscribedToEarlyOutAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToEarlyOutAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Late Out</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToLateOutAlertsPush"
+                                                        name="SubscribedToLateOutAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToLateOutAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToLateOutAlertsEmail"
+                                                        name="SubscribedToLateOutAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToLateOutAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Missed In</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToMissedInAlertsPush"
+                                                        name="SubscribedToMissedInAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToMissedInAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToMissedInAlertsEmail"
+                                                        name="SubscribedToMissedInAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToMissedInAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Missed Out</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToMissedOutAlertsPush"
+                                                        name="SubscribedToMissedOutAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToMissedOutAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToMissedOutAlertsEmail"
+                                                        name="SubscribedToMissedOutAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToMissedOutAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Punch In (No Shift Used)</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToPunchInNoShiftAlertsPush"
+                                                        name="SubscribedToPunchInNoShiftAlertsPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchInNoShiftAlertsPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToPunchInNoShiftAlertsEmail"
+                                                        name="SubscribedToPunchInNoShiftAlertsEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchInNoShiftAlertsEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 ml-2">
+                                            <h5>Reminders:</h5>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Start Shift</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToStartShiftRemindersPush"
+                                                        name="SubscribedToStartShiftRemindersPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToStartShiftRemindersPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToStartShiftRemindersEmail"
+                                                        name="SubscribedToStartShiftRemindersEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToStartShiftRemindersEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Shift End</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToShiftEndRemindersPush"
+                                                        name="SubscribedToShiftEndRemindersPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToShiftEndRemindersPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToShiftEndRemindersEmail"
+                                                        name="SubscribedToShiftEndRemindersEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToShiftEndRemindersEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Punch In</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToPunchInRemindersPush"
+                                                        name="SubscribedToPunchInRemindersPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchInRemindersPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToPunchInRemindersEmail"
+                                                        name="SubscribedToPunchInRemindersEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchInRemindersEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5">
+                                            <div class="col"><span>Punch Out</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToPunchOutRemindersPush"
+                                                        name="SubscribedToPunchOutRemindersPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchOutRemindersPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToPunchOutRemindersEmail"
+                                                        name="SubscribedToPunchOutRemindersEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToPunchOutRemindersEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row py-2 border-bottom ml-5 mb-4">
+                                            <div class="col"><span>Submit Time Card</span></div>
+                                            <div class="col text-right">
+                                                <div class="form-group mb-0">
+                                                    <label class="m-checkbox mb-0"><input checked="checked"
+                                                        id="SubscribedToSubmitTimeCardRemindersPush"
+                                                        name="SubscribedToSubmitTimeCardRemindersPush"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToSubmitTimeCardRemindersPush" type="hidden"
+                                                        value="false">Push<span></span></label>
+                                                    <label class="m-checkbox mb-0 ml-4 mt-0"><input checked="checked"
+                                                        id="SubscribedToSubmitTimeCardRemindersEmail"
+                                                        name="SubscribedToSubmitTimeCardRemindersEmail"
+                                                        type="checkbox" value="true"><input
+                                                        name="SubscribedToSubmitTimeCardRemindersEmail" type="hidden"
+                                                        value="false">Email<span></span></label>
+                                                </div>
+                                            </div>
                                         </div>
 
 
