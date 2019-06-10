@@ -1033,26 +1033,27 @@
                                     <div class="col-1 pl-0"></div>
                                     <div>
                                         <div class="d-flex align-items-center my-2"
-                                            v-for="(day, key) in weekDays" :key="key">
+                                            v-for="(item, key) in weekDays" :key="key">
                                             <div class="col">
                                                 <label class="m-checkbox mb-0">
                                                     <input checked="checked"
-                                                        :id="day"
-                                                        :name="day"
+                                                        :id="item.day"
+                                                        :name="item.day"
                                                         type="checkbox"
+                                                        :checked="item.checked"
                                                         value="true">
-                                                        {{day}}<span></span>
+                                                        {{item.day}}<span></span>
                                                 </label>
                                             </div>
                                             <div class="col pl-0">
                                                 <div class="bootstrap-timepicker timepicker timepicker-default">
                                                     <input autocomplete="off"
                                                         class="form-control m-input timepicker"
-                                                        :id="day + 'Time'"
-                                                        :name="day + 'Time'"
+                                                        :id="item.day + 'Time'"
+                                                        :name="item.day + 'Time'"
                                                         type="text"
-                                                        value="8:00 AM">
-                                                    <span class="field-validation-valid" :data-valmsg-for="day + 'Time'" data-valmsg-replace="true"></span>
+                                                        :value="item.defaultTime">
+                                                    <span class="field-validation-valid" :data-valmsg-for="item.day + 'Time'" data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1988,15 +1989,35 @@
                             isShowPayPeriodDaysSet: true,
                         },
                     },
-                    weekDays: [
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday",
-                        "Sunday"
-                    ],
+                    weekDays: [{
+                        day: "Monday",
+                        checked: true,
+                        defaultTime: '9:00 AM'
+                    }, {
+                        day: "Tuesday",
+                        checked: false,
+                        defaultTime: '8:00 AM'
+                    }, {
+                        day: "Wednesday",
+                        checked: true,
+                        defaultTime: '10:00 AM'
+                    }, {
+                        day: "Thursday",
+                        checked: false,
+                        defaultTime: '8:00 PM'
+                    }, {
+                        day: "Friday",
+                        checked: true,
+                        defaultTime: '8:00 AM'
+                    }, {
+                        day: "Saturday",
+                        checked: false,
+                        defaultTime: '8:00 AM'
+                    }, {
+                        day: "Sunday",
+                        checked: false,
+                        defaultTime: '8:00 AM'
+                    }],
                 },
                 computed: {
                     preNote: function() {
