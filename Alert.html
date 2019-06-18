@@ -992,10 +992,34 @@
                                         <option value="10">Punch In Reminder</option>
                                         <option value="11">Punch Out Reminder</option>
                                         <option value="12">Submit Time Card Reminder</option>
+                                        <option value="13">Overtime Alert</option>
                                     </select>
                                 </div>
-                                
-                                <div class="form-group">
+
+                                <div class="form-group" v-if="isShowSecondaryType">
+                                    <label class="control-label" for="AlertRuleSecondaryTypeId">Secondary Type</label>
+                                    <select class="form-control input-medium" data-val="true"
+                                        data-val-number="The field AlertRuleTypeId must be a number."
+                                        id="AlertRuleSecondaryTypeId" name="AlertRuleSecondaryTypeId"
+                                        v-model="alertRuleSecondaryTypeId">
+                                        <option value="1" selected="selected">Time of Day</option>
+                                        <option value="2">Hours Worked</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group" v-if="isShowOvertimeAlertRuleType">
+                                    <label class="control-label" for="OvertimeAlertRuleTypeId">Interval</label>
+                                    <select class="form-control input-small valid" data-val="true"
+                                        data-val-number="The field OvertimeAlertRuleTypeId must be a number."
+                                        id="OvertimeAlertRuleTypeId" name="OvertimeAlertRuleTypeId"
+                                        aria-describedby="OvertimeAlertRuleTypeId-error" aria-invalid="false">
+                                        <option value="1" selected="selected">Weekly</option>
+                                        <option value="2">Daily</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" v-if="preNote || postNote">
                                     <div class="d-flex align-items-center">
                                         <div class="bg-info py-3 px-4 text-white">
                                             <i class="fa fa-info-circle"></i>
@@ -1027,6 +1051,41 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="form-group" v-if="isShowOvertimeAlertRuleType">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-right: 5px;">
+                                                    <label class="control-label">Hours</label>
+                                                    <input class="form-control input-xsmall" data-val="true"
+                                                        data-val-number="The field Hours must be a number."
+                                                        data-val-range="Hours must be between 0 and 168"
+                                                        data-val-range-max="1000" data-val-range-min="0"
+                                                        data-val-regex="The field Hours should be a positive or negative non-decimal number."
+                                                        data-val-regex-pattern="^-?\d+$"
+                                                        data-val-required="Hours is required" id="Hours" name="Hours"
+                                                        type="text" value="0">
+                                                    <span class="field-validation-valid" data-valmsg-for="Hours"
+                                                        data-valmsg-replace="true"></span>
+                                                </td>
+                                                <td>
+                                                    <label class="control-label">Minutes</label>
+                                                    <input class="form-control input-xsmall" data-val="true"
+                                                        data-val-number="The field Minutes must be a number."
+                                                        data-val-range="Minutes must be between 0 and 59"
+                                                        data-val-range-max="59" data-val-range-min="0"
+                                                        data-val-regex="The field Minutes should be a positive or negative non-decimal number."
+                                                        data-val-regex-pattern="^-?\d+$"
+                                                        data-val-required="Minutes is required" id="Minutes"
+                                                        name="Minutes" type="text" value="0">
+                                                    <span class="field-validation-valid" data-valmsg-for="Minutes"
+                                                        data-valmsg-replace="true"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
 
                                 <div class="form-group d-flex" id="schedule-set" v-if="isShowScheduleSet">
@@ -1903,6 +1962,7 @@
                 el: '#alertRulesApp',
                 data: {
                     alertRuleTypeId: '1',
+                    alertRuleSecondaryTypeId: '1',
                     alertRulesData: {
                         '1': {
                             preNote: 'The alert will send if the employee punched in:',
@@ -1910,6 +1970,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '2': {
                             preNote: 'The alert will send if the employee punched in:',
@@ -1917,6 +1979,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '3': {
                             preNote: 'The alert will send if the employee punches out:',
@@ -1924,6 +1988,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '4': {
                             preNote: 'The alert will send if the employee punches out:',
@@ -1931,6 +1997,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '5': {
                             preNote: 'The alert will send if the employee does not punch in within:',
@@ -1938,6 +2006,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '6': {
                             preNote: 'The alert will send if the employee does not punch out within:',
@@ -1945,6 +2015,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '7': {
                             preNote: 'The alert will send if the employee does not punch in within:',
@@ -1952,6 +2024,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '8': {
                             preNote: 'The alert will send if the employee does not punch out within:',
@@ -1959,6 +2033,8 @@
                             isShowMinutes: true,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '9': {
                             preNote: 'The alert will send if the employee chooses "No Shift" when punching in.',
@@ -1966,6 +2042,8 @@
                             isShowMinutes: false,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '10': {
                             preNote: 'The alert will send if the employee does not punch in by the schedule set below.',
@@ -1973,6 +2051,8 @@
                             isShowMinutes: false,
                             isShowScheduleSet: true,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
                         },
                         '11': {
                             preNote: 'The alert will send if the employee does not punch out by the schedule set below.',
@@ -1980,6 +2060,8 @@
                             isShowMinutes: false,
                             isShowScheduleSet: true,
                             isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: true,
                         },
                         '12': {
                             preNote: 'The alert will send if the employee\'s time card is in "Draft" or "Rejected" status.',
@@ -1987,6 +2069,37 @@
                             isShowMinutes: false,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: true,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: false,
+                        },
+                        '13': {
+                            preNote: false,
+                            postNote: false,
+                            isShowMinutes: false,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: true,
+                            isShowSecondaryType: false,
+                        },
+                    },
+                    alertRulesSecondaryData: {
+                        '1': {
+                            preNote: 'The alert will send if the employee does not punch out by the schedule set below.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: true,
+                            isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: true,
+                        },
+                        '2': {
+                            preNote: 'The alerts will send if the employee is punched in past the time set below.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: false,
+                            isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: true,
+                            isShowSecondaryType: false,
                         },
                     },
                     weekDays: [{
@@ -2021,7 +2134,11 @@
                 },
                 computed: {
                     preNote: function() {
-                        return this.alertRulesData[this.alertRuleTypeId].preNote;
+                        if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
+                            return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].preNote;
+                        } else {
+                            return this.alertRulesData[this.alertRuleTypeId].preNote;
+                        }
                     },
                     postNote: function() {
                         return this.alertRulesData[this.alertRuleTypeId].postNote;
@@ -2030,11 +2147,25 @@
                         return this.alertRulesData[this.alertRuleTypeId].isShowMinutes;
                     },
                     isShowScheduleSet: function() {
-                        return this.alertRulesData[this.alertRuleTypeId].isShowScheduleSet;
+                        if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
+                            return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].isShowScheduleSet;
+                        } else {
+                            return this.alertRulesData[this.alertRuleTypeId].isShowScheduleSet;
+                        }
                     },
                     isShowPayPeriodDaysSet: function() {
                         return this.alertRulesData[this.alertRuleTypeId].isShowPayPeriodDaysSet;
                     },
+                    isShowOvertimeAlertRuleType: function() {
+                        if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
+                            return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].isShowOvertimeAlertRuleType;
+                        } else {
+                            return this.alertRulesData[this.alertRuleTypeId].isShowOvertimeAlertRuleType;
+                        }
+                    },
+                    isShowSecondaryType: function() {
+                        return this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType;
+                    }
                 },
                 watch: {
                     isShowScheduleSet: function(val) {
