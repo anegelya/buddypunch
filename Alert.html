@@ -1006,8 +1006,8 @@
                                         data-val-number="The field AlertRuleTypeId must be a number."
                                         id="AlertRuleSecondaryTypeId" name="AlertRuleSecondaryTypeId"
                                         v-model="alertRuleSecondaryTypeId">
-                                        <option value="1" selected="selected">Time of Day</option>
-                                        <option value="2">Hours Worked</option>
+                                        <option v-for="(type, i) in secondaryTypes" :key="type"
+                                                :value="type" :selected="i < 1">{{alertRulesSecondaryData[type].name}}</option>
                                     </select>
                                 </div>
 
@@ -1117,6 +1117,54 @@
                                                         type="text"
                                                         :value="item.defaultTime">
                                                     <span class="field-validation-valid" :data-valmsg-for="item.day + 'Time'" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group d-flex" id="schedule-range-set" v-if="isShowScheduleRangeSet">
+                                    <div class="col-1 pl-0"></div>
+                                    <div>
+                                        <div class="d-flex align-items-center my-2"
+                                            v-for="(item, key) in weekDays" :key="key">
+                                            <div class="col">
+                                                <label class="m-checkbox mb-0">
+                                                    <input checked="checked"
+                                                        :id="item.day"
+                                                        :name="item.day"
+                                                        type="checkbox"
+                                                        :checked="item.checked"
+                                                        value="true">
+                                                        {{item.day}}<span></span>
+                                                </label>
+                                            </div>
+                                            <div class="px-3">
+                                                Punched out between
+                                            </div>
+                                            <div class="col px-0">
+                                                <div class="bootstrap-timepicker timepicker timepicker-default">
+                                                    <input autocomplete="off"
+                                                        class="form-control m-input timepicker time-from-picker"
+                                                        :id="item.day + 'TimeFrom'"
+                                                        :name="item.day + 'TimeFrom'"
+                                                        type="text"
+                                                        :value="item.defaultTime">
+                                                    <span class="field-validation-valid" :data-valmsg-for="item.day + 'TimeFrom'" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="px-3">
+                                                and
+                                            </div>
+                                            <div class="col pl-0">
+                                                <div class="bootstrap-timepicker timepicker timepicker-default">
+                                                    <input autocomplete="off"
+                                                        class="form-control m-input timepicker time-to-picker"
+                                                        :id="item.day + 'TimeTo'"
+                                                        :name="item.day + 'TimeTo'"
+                                                        type="text"
+                                                        :value="item.defaultTime">
+                                                    <span class="field-validation-valid" :data-valmsg-for="item.day + 'TimeTo'" data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -2056,7 +2104,8 @@
                             isShowScheduleSet: true,
                             isShowPayPeriodDaysSet: false,
                             isShowOvertimeAlertRuleType: false,
-                            isShowSecondaryType: false,
+                            isShowSecondaryType: true,
+                            secondaryTypes: ['3', '4'],
                         },
                         '11': {
                             preNote: 'The alert will send if the employee does not punch out by the schedule set below.',
@@ -2066,6 +2115,7 @@
                             isShowPayPeriodDaysSet: false,
                             isShowOvertimeAlertRuleType: false,
                             isShowSecondaryType: true,
+                            secondaryTypes: ['1', '2'],
                         },
                         '12': {
                             preNote: 'The alert will send if the employee\'s time card is in "Draft" or "Rejected" status.',
@@ -2088,6 +2138,7 @@
                     },
                     alertRulesSecondaryData: {
                         '1': {
+                            name: 'Time of Day',
                             preNote: 'The alert will send if the employee does not punch out by the schedule set below.',
                             postNote: '',
                             isShowMinutes: false,
@@ -2097,12 +2148,34 @@
                             isShowSecondaryType: true,
                         },
                         '2': {
+                            name: 'Hours Worked',
                             preNote: 'The alerts will send if the employee is punched in past the time set below.',
                             postNote: '',
                             isShowMinutes: false,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: false,
                             isShowOvertimeAlertRuleType: true,
+                            isShowSecondaryType: false,
+                        },
+                        '3': {
+                            name: 'Time of Day',
+                            preNote: 'The alert will send if the employee does not punch in by the schedule set below.',
+                            postNote: '',
+                            isShowMinutes: false,
+                            isShowScheduleSet: true,
+                            isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
+                            isShowSecondaryType: true,
+                        },
+                        '4': {
+                            name: 'Break/Lunch',
+                            preNote: 'If the employee punched out between the two times listed they will reminded to punch back in after',
+                            postNote: '',
+                            isShowMinutes: true,
+                            isShowScheduleSet: false,
+                            isShowScheduleRangeSet: true,
+                            isShowPayPeriodDaysSet: false,
+                            isShowOvertimeAlertRuleType: false,
                             isShowSecondaryType: false,
                         },
                     },
@@ -2148,13 +2221,24 @@
                         return this.alertRulesData[this.alertRuleTypeId].postNote;
                     },
                     isShowMinutes: function() {
-                        return this.alertRulesData[this.alertRuleTypeId].isShowMinutes;
+                        if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
+                            return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].isShowMinutes;
+                        } else {
+                            return this.alertRulesData[this.alertRuleTypeId].isShowMinutes;
+                        }
                     },
                     isShowScheduleSet: function() {
                         if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
                             return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].isShowScheduleSet;
                         } else {
                             return this.alertRulesData[this.alertRuleTypeId].isShowScheduleSet;
+                        }
+                    },
+                    isShowScheduleRangeSet: function() {
+                        if(this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType) {
+                            return this.alertRulesSecondaryData[this.alertRuleSecondaryTypeId].isShowScheduleRangeSet || false;
+                        } else {
+                            return this.alertRulesData[this.alertRuleTypeId].isShowScheduleRangeSet || false;
                         }
                     },
                     isShowPayPeriodDaysSet: function() {
@@ -2169,7 +2253,14 @@
                     },
                     isShowSecondaryType: function() {
                         return this.alertRulesData[this.alertRuleTypeId].isShowSecondaryType;
-                    }
+                    },
+                    secondaryTypes: function() {
+                        if(this.isShowSecondaryType) {
+                            return this.alertRulesData[this.alertRuleTypeId].secondaryTypes;
+                        } else {
+                            return null;
+                        }
+                    },
                 },
                 watch: {
                     isShowScheduleSet: function(val) {
@@ -2180,6 +2271,31 @@
                             }, 1);
                         }
                     },
+                    /**
+                     * Init Linked datetimepickers when isShowScheduleRangeSet is true
+                     * Add event listener to update min date in second timepicker based on current time in 1st one
+                     */
+                    isShowScheduleRangeSet: function(val) {
+                        if(val === true) {
+                            var _this = this;
+                            setTimeout(function() {
+                                // Init linked Datetimepickers
+                                _this.initLinkedDatetimepicker();
+                                // Update minDate when TimeFrom datepicker changed
+                                _this.weekDays.forEach(function(item) {
+                                    $('#' + item.day + 'TimeFrom').on("dp.change", function (e) {
+                                        $('#' + item.day + 'TimeTo').data("DateTimePicker").minDate(e.date);
+                                    });
+                                });
+                            }, 1);
+                        }
+                    },
+                    /**
+                     * Update current Secondary Type model on secondaryTypes changes
+                     */
+                    secondaryTypes: function(val) {
+                        this.alertRuleSecondaryTypeId = this.secondaryTypes[0];
+                    }
                 },
                 methods: {
                     initDatetimepicker: function() {
@@ -2200,6 +2316,13 @@
                                 clear: 'fa fa-trash',
                                 close: 'fa fa-remove'
                             }
+                        });
+                    },
+                    initLinkedDatetimepicker: function() {
+                        this.initDatetimepicker();
+                        // Set min Date to defaultTime value for each day
+                        this.weekDays.forEach(function(item) {
+                            $('#' + item.day + 'TimeTo').data("DateTimePicker").minDate(item.defaultTime);
                         });
                     },
                     toggleEmployeeSelect: function(e) {
