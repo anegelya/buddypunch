@@ -1221,7 +1221,6 @@
                                     </div>
                                     <div>
                                         <div class="d-flex align-items-baseline my-2" v-if="isSendToEmployee">
-                                            {{isSendToEmployee}}
                                             <div class="col">
                                                 <label class="m-checkbox">
                                                     <input checked="checked"
@@ -1335,15 +1334,22 @@
                                             value="false"> Active<span></span></label>
                                 </div>
                                 <div class="form-group">
-                                    <label class="m-checkbox"><input id="applyToAllEmployeesCheckbox"
+                                    <label class="m-checkbox"
+                                            v-if="isSendToEmployee"><input id="applyToAllEmployeesCheckbox"
                                             name="IsValidForAllEmployees" @click="toggleEmployeeSelect"
                                             type="checkbox" value="true"><input name="IsValidForAllEmployees"
-                                            type="hidden" value="false"> Apply to all current and future
+                                            type="hidden" value="false">Apply to all current and future
                                         employees<span></span></label>
+                                    <label class="m-checkbox"
+                                            v-if="!isSendToEmployee"><input id="applyToAllAdministratorsManagersCheckbox"
+                                            name="IsValidForAllAdministratorsManagers" @click="toggleAdminManagersSelect"
+                                            type="checkbox" value="true"><input name="IsValidForAllAdministratorsManagers"
+                                            type="hidden" value="false">Apply to all current and future
+                                        administrators and managers<span></span></label>
                                 </div>
 
 
-                                <div id="employeeSelectId" style="display: block;">
+                                <div id="employeeSelectId" style="display: block;" v-if="isSendToEmployee">
                                     <br>
                                     <h5>Select the employees assigned to this Alert. An employee may be assigned
                                         multiple Alerts.</h5>
@@ -1693,6 +1699,63 @@
                                                     </label>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div id="administratorsManagersSelectId" style="display: block;" v-if="!isSendToEmployee">
+                                    <br>
+                                    <h5>Select who is assigned this Alert.</h5>
+                                    <table class="table table-striped table-hover" id="administrators_managers_table"
+                                        style="color: rgb(85, 107, 47);">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <label class="m-checkbox">
+                                                        <input type="checkbox" class="group-checkable"
+                                                            data-set="#administrators_managers_table .checkboxes">
+                                                        <span></span>
+                                                        All
+                                                    </label>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>
+                                                    <label class="m-checkbox">
+                                                        <input class="checkboxes" id="staff14270" type="checkbox"
+                                                            name="AlertRuleStaffIds" value="14270">
+
+                                                        <span></span>
+                                                        Admin admin
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="m-checkbox">
+                                                        <input class="checkboxes" id="staff14271" type="checkbox"
+                                                            name="AlertRuleStaffIds" value="14271">
+
+                                                        <span></span>
+                                                        Manager manager
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label class="m-checkbox">
+                                                        <input class="checkboxes" id="staff14093" type="checkbox"
+                                                            name="AlertRuleStaffIds" value="14093">
+
+                                                        <span></span>
+                                                        Admin manager
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -2138,8 +2201,8 @@
                             isShowSecondaryType: false,
                         },
                         '14': {
-                            preNote: 'The reminder will send if there are any time cards in "Pending" status',
-                            postNote: false,
+                            preNote: 'The reminder will send if there are any time cards in "Pending" status.',
+                            postNote: '',
                             isShowMinutes: false,
                             isShowScheduleSet: false,
                             isShowPayPeriodDaysSet: true,
@@ -2347,6 +2410,13 @@
                         } else {
                             document.getElementById("employeeSelectId").style.display = "block";
                         }
+                    },
+                    toggleAdminManagersSelect: function(e) {
+                        if(e.target.checked) {
+                            document.getElementById('administratorsManagersSelectId').style.display = "none";
+                        } else {
+                            document.getElementById('administratorsManagersSelectId').style.display = "block";
+                        }
                     }
                 },
                 mounted() {
@@ -2361,9 +2431,14 @@
                     jQuery(document).ready(function () {
                         // initiate layout and plugins
                         $('#employees_table').setupSelectAllTable();
+                        $('#administrators_managers_table').setupSelectAllTable();
                         $('#AlertRuleTypeId').selectpicker();
                     })
                 },
+                updated() {
+                    $('#employees_table').setupSelectAllTable();
+                    $('#administrators_managers_table').setupSelectAllTable();
+                }
             });
         });
     </script>
